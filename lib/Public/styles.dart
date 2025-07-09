@@ -7,6 +7,7 @@ const double paddingSize=15;
 const double borderSize=1;
 
 const Color whiteColor=Color(0xffFFFFFF);
+const Color itemColor = Color(0xffE9E9E9);
 
 Map<int, Color> _primaryMap = {
   50: appColor.withOpacity(0.05),
