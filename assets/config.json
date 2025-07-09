@@ -1,0 +1,31 @@
+{
+  "responsive": [
+    {
+      "min": 1440,
+      "max": 1920,
+      "type": "column",
+      "backgroundColor": "FF0000",
+      "top" : 20 ,
+      "right": 40
+    },
+    {
+      "min": 1200,
+      "max": 1440,
+      "type": "row",
+      "backgroundColor": "0000FF",
+      "top" : 5 ,
+      "bottom" : 5 ,
+      "left" : 10,
+      "right": 2
+    },
+    {
+      "min": 400,
+      "max": 1200,
+      "type": "container",
+      "top" : 20 ,
+      "bottom" : 5 ,
+      "left" : 10,
+      "right": 30
+    }
+  ]
+}
