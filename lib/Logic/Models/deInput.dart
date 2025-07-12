@@ -29,38 +29,35 @@ class DeInputModel {
     this.hintColor,
   });
 
-  factory DeInputModel.fromJson(Map<String, dynamic> json) {
-    return DeInputModel(
-      lable: json['lable'] as String,
-      hint: json['hint'] as String,
-      width: json['width'] as double,
-      height: json['height'] as double,
-      lines: json['lines'] as int,
-      radius: json['radius'] as double,
-      icon1: json['icon1'],
-      icon2: json['icon2'],
-      onChange: json['onChange'],
-      onTap: json['onTap'],
-      fontSize: json['fontSize'],
-      fillColor: json['fillColor'] as Color,
-      hintColor:  json['hintColor'] as Color,
-    );
+  DeInputModel.fromJson(Map<String, dynamic> json) {
+    lable = json['lable'];
+    hint = json['hint'];
+    width = json['width'];
+    height = json['height'];
+    lines = json['lines'];
+    radius = json['radius'];
+    icon1 = json['icon1'];
+    icon2 = json['icon2'];
+    onChange = json['onChange'];
+    onTap = json['onTap'];
+    fontSize = json['fontSize'];
+    fillColor = json['fillColor'];
+    hintColor = json['hintColor'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'lable': lable,
-      'hint': hint,
-      'width': width,
-      'height': height,
-      'lines': lines,
-      'radius': radius,
-      'icon1': icon1,
-      'icon2': icon2,
-      'fontSize' : fontSize,
-      'fillColor' : fillColor,
-      'hintColor' : hintColor,
-
-    };
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['lable'] = this.lable;
+    data['hint'] = this.hint;
+    data['width'] = this.width;
+    data['height'] = this.height;
+    data['lines'] = this.lines;
+    data['radius'] = this.radius;
+    data['icon1'] = this.icon1;
+    data['icon2'] = this.icon2;
+    data['fontSize'] = this.fontSize;
+    data['fillColor'] = this.fillColor;
+    data['hintColor'] = hintColor;
+    return data;
   }
 }

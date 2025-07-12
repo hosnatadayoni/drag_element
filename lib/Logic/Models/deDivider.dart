@@ -12,19 +12,17 @@ class DeDividerModel {
     this.height = 1,
   });
 
-  factory DeDividerModel.fromJson(Map<String, dynamic> json) {
-    return DeDividerModel(
-      padding: json['padding'] as double,
-      color: json['color'] as Color,
-      height: json['height'] as double,
-    );
+   DeDividerModel.fromJson(Map<String, dynamic> json) {
+      padding =  json['padding'];
+      color =  json['color'];
+      height = json['height'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'padding': padding,
-      'color': color,
-      'height': height,
-    };
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+       data['padding'] =  this.padding;
+      data['color'] = this.color;
+      data['height'] =  this.height;
+    return data;
   }
 }

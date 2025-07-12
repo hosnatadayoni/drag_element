@@ -23,7 +23,7 @@ class DeText extends StatelessWidget {
 
   Widget getText() {
     return Text(
-      model.text,
+      model.text!,
       style: TextStyle(
           fontFamily: model.fontFamily,
           fontSize: model.fontSize,

@@ -12,7 +12,6 @@ import 'package:drag_element/UI/Componenets/deInput.dart';
 import 'package:drag_element/UI/Componenets/deSizedBox.dart';
 import 'package:drag_element/UI/Componenets/deText.dart';
 import 'package:flutter/material.dart';
-
 import '../Componenets/deBtn.dart';
 
 class TestPage extends StatelessWidget {
@@ -82,14 +81,29 @@ class TestPage extends StatelessWidget {
               // ),
               DeSizedBox(
                   SizedBoxModel: DeSizedBoxModel(
-                    height: 80,
-                  )),
-              DeDivider(driverModel: DeDividerModel(padding: 10),),
+                height: 80,
+              )),
+              DeDivider(
+                driverModel: DeDividerModel(padding: 10),
+              ),
               DeSizedBox(
                   SizedBoxModel: DeSizedBoxModel(
-                    height: 80,
-                  )),
-              DeBtn(btnModel: DeBtnModel(text: 'btn' , backgroundColor: Colors.green , radius: 5 , foregroundColor: Colors.black),)
+                height: 80,
+              )),
+              DeBtn(
+                btnModel: DeBtnModel(
+                  content: DeText(
+                    model: DeTextModel(
+                      text: "test",
+                      fontSize: 16,
+                      color: Colors.black,
+                    ),
+                  ),
+                  radius: 5,
+                  backgroundColor: Colors.red,
+                  borderColor: Colors.red,
+                ),
+              ),
             ],
           ),
         ),

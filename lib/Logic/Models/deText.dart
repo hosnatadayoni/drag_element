@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 
 class DeTextModel {
-  String text;
+  String? text;
   String? fontFamily;
   int? maxLine;
   double? fontSize;
@@ -26,33 +26,31 @@ class DeTextModel {
     this.fontStyle,
   });
 
-  factory DeTextModel.fromJson(Map<String, dynamic> json) {
-    return DeTextModel(
-      text: json['text'] as String,
-      fontFamily: json['fontFamily'] as String?,
-      maxLine: json['maxLine'] as int?,
-      fontSize: json['fontSize'] as double?,
-      fontWeight: json['fontWeight'] as FontWeight?,
-      color: json['color'] as Color?,
-      textOverflow: json['textOverflow'] as TextOverflow?,
-      textDecoration: json['textDecoration'] as TextDecoration?,
-      textAlign: json['textAlign'] as TextAlign?,
-      fontStyle: json['fontStyle'] as FontStyle?,
-    );
+  DeTextModel.fromJson(Map<String, dynamic> json) {
+    text = json['text'];
+    fontFamily = json['fontFamily'];
+    maxLine = json['maxLine'];
+    fontSize = json['fontSize'];
+    fontWeight = json['fontWeight'];
+    color = json['color'];
+    textOverflow = json['textOverflow'];
+    textDecoration = json['textDecoration'];
+    textAlign = json['textAlign'];
+    fontStyle = json['fontStyle'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'text': text,
-      'fontFamily': fontFamily,
-      'maxLine': maxLine,
-      'fontSize': fontSize,
-      'fontWeight': fontWeight,
-      'color': color,
-      'textOverflow': textOverflow,
-      'textDecoration': textDecoration,
-      'textAlign': textAlign,
-      'fontStyle': fontStyle,
-    };
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['text'] = this.text;
+    data['fontFamily'] = this.fontFamily;
+    data['maxLine'] = this.maxLine;
+    data['fontSize'] = this.fontSize;
+    data['fontWeight'] = this.fontWeight;
+    data['color'] = this.color;
+    data['textOverflow'] = this.textOverflow;
+    data['textDecoration'] = this.textDecoration;
+    data['textAlign'] = this.textAlign;
+    data['fontStyle'] = this.fontStyle;
+    return data;
   }
 }

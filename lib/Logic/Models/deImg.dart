@@ -1,11 +1,11 @@
 import 'dart:ui';
 
-class DeImgModel{
-  String path;
-  double? width,height,radius;
+class DeImgModel {
+  String? path;
+  double? width, height, radius;
   Color? color;
   Function? onClick;
-  bool isNetwork;
+  bool? isNetwork;
 
   DeImgModel({
     required this.path,
@@ -14,30 +14,27 @@ class DeImgModel{
     this.radius,
     this.color,
     this.onClick,
-    this.isNetwork = false ,
-});
+    this.isNetwork = false,
+  });
 
-  factory DeImgModel.fromJson(Map<String, dynamic> json) {
-    return DeImgModel(
-      path: json['path'] as String,
-      width: json['width'] as double,
-      height: json['height'] as double,
-      radius: json['radius'] as double,
-      color: json['color'] as Color,
-      onClick: json['onClick'],
-      isNetwork: json['isNetwork'] as bool
-    );
+  DeImgModel.fromJson(Map<String, dynamic> json) {
+    path = json['path'];
+    width = json['width'];
+    height = json['height'];
+    radius = json['radius'];
+    color = json['color'];
+    onClick = json['onClick'];
+    isNetwork = json['isNetwork'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'path': path,
-      'width': width,
-      'height': height,
-      'radius': radius,
-      'color' : color,
-      'isNetwork' : isNetwork,
-    };
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['path'] = path;
+    data['width'] = width;
+    data['height'] = height;
+    data['radius'] = radius;
+    data['color'] = color;
+    data['isNetwork'] = isNetwork;
+    return data;
   }
-
 }

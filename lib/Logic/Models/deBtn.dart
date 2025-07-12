@@ -1,54 +1,55 @@
 import 'dart:ui';
+import 'package:flutter/cupertino.dart';
 
 class DeBtnModel {
   Function? onPressed;
   Color? backgroundColor;
-  Color? foregroundColor;
+  Color? borderColor;
   double? paddingTop;
   double? paddingBottom;
   double? paddingRight;
   double? paddingLeft;
   double? radius;
-  String text;
-  double? fontSize;
+  Widget? content;
+  bool? disabled;
 
   DeBtnModel({
     this.onPressed,
     this.backgroundColor,
-    this.foregroundColor,
+    this.borderColor,
     this.paddingTop,
     this.paddingBottom,
     this.paddingRight,
     this.paddingLeft,
     this.radius,
-    required this.text,
-    this.fontSize
+    required this.content,
+    this.disabled = false,
   });
 
-  factory DeBtnModel.fromJson(Map<String, dynamic> json) {
-    return DeBtnModel(
-      onPressed: json['onPressed'],
-      backgroundColor: json['backgroundColor'] as Color,
-      foregroundColor: json['foregroundColor'] as Color,
-      paddingTop: json['paddingTop'] as double,
-      paddingBottom: json['paddingBottom'] as double,
-      paddingRight: json['paddingRight'] as double,
-      paddingLeft: json['paddingLeft'] as double,
-      text: json['text'] as String,
-      fontSize: json['fontSize'] as double,
-    );
+  DeBtnModel.fromJson(Map<String, dynamic> json) {
+    onPressed = json['onPressed'];
+    backgroundColor = json['backgroundColor'];
+    borderColor = json['borderColor'];
+    paddingTop = json['paddingTop'];
+    paddingBottom = json['paddingBottom'];
+    paddingRight = json['paddingRight'];
+    paddingLeft = json['paddingLeft'];
+    radius = json['radius'];
+    content = json['content'];
+    disabled = json['disabled'];
   }
 
   Map<String, dynamic> toJson() {
-    return {
-      'backgroundColor': backgroundColor,
-      'foregroundColor': foregroundColor,
-      'paddingTop': paddingTop,
-      'paddingBottom': paddingBottom,
-      'paddingRight': paddingRight,
-      'paddingLeft': paddingLeft,
-      'text': text,
-      'fontSize' : fontSize
-    };
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['backgroundColor'] = this.backgroundColor;
+    data['borderColor'] = this.borderColor;
+    data['paddingTop'] = this.paddingTop;
+    data['paddingBottom'] = this.paddingBottom;
+    data['paddingRight'] = this.paddingRight;
+    data['paddingLeft'] = this.paddingLeft;
+    data['radius'] = this.radius;
+    data['content'] = this.content;
+    data['disabled'] = this.disabled;
+    return data;
   }
 }

@@ -23,13 +23,13 @@ class DeImg extends StatelessWidget {
             child:ClipRRect(
               borderRadius: BorderRadius.circular(this.ImgModel.radius??0),
               child:
-              this.ImgModel.path.split('.').last=='svg'?
-              this.ImgModel.isNetwork?
-              SvgPicture.network(this.ImgModel.path,color: this.ImgModel.color,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill):
-              SvgPicture.asset(this.ImgModel.path,color: this.ImgModel.color,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill,) :
-              this.ImgModel.isNetwork?
-              Image.network(this.ImgModel.path,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill) :
-              Image.asset(this.ImgModel.path,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill),
+              this.ImgModel.path!.split('.').last=='svg'?
+              this.ImgModel.isNetwork!?
+              SvgPicture.network(this.ImgModel.path!,color: this.ImgModel.color,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill):
+              SvgPicture.asset(this.ImgModel.path!,color: this.ImgModel.color,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill,) :
+              this.ImgModel.isNetwork!?
+              Image.network(this.ImgModel.path!,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill) :
+              Image.asset(this.ImgModel.path!,fit: this.ImgModel.width==null || this.ImgModel.height==null?BoxFit.contain:BoxFit.fill),
             )
         ),
       ),
