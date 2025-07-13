@@ -1,6 +1,7 @@
 import 'package:drag_element/Logic/Controllers/main-controller.dart';
 import 'package:drag_element/UI/Componenets/deColumnContainer.dart';
 import 'package:drag_element/UI/Componenets/deRowContainer.dart';
+import 'package:drag_element/UI/Componenets/deWrapContainer.dart';
 import 'package:flutter/material.dart';
 
 class DeContainer extends StatelessWidget {
@@ -17,6 +18,7 @@ class DeContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+    print('size.width>>>${size.width}');
     MainController.loadJson();
     String type = MainController.getType(size.width) ?? 'row';
     var backgroundColor = MainController.getBackgrounColor(size.width) ?? null;
@@ -48,6 +50,17 @@ class DeContainer extends StatelessWidget {
                 ? MainController.fromHex(backgroundColor)
                 : null,
             child: DeColumnContainer(children: children));
+      case 'wrap':
+        result = Container(
+            padding: EdgeInsets.only(
+                top: paddingTop,
+                bottom: paddingBottom,
+                left: paddingLeft,
+                right: paddingRight),
+            color: backgroundColor != null
+                ? MainController.fromHex(backgroundColor)
+                : null,
+            child: DeWrapContainer(children: children));
       case 'container':
         result = Container(
             padding: EdgeInsets.only(
